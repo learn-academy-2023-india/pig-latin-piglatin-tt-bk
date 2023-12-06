@@ -31,9 +31,41 @@ const App = () => {
       })
       console.log("vowelsArray:", vowelsArray)
 
+        let firstVowelIndex = -1
+      for (let i = 0; i < eachWord.length; i++) {
+        if (vowelsArray.includes(eachWord[i])) {
+          firstVowelIndex = i
+          break
+        }
+      }
+      if (firstVowelIndex === 0) {
+        eachWord = eachWord + "way"
+      }
+      else if (firstVowelIndex !== 0) {
+        if (eachWord.charAt(firstVowelIndex -1) === "q" && eachWord.charAt(firstVowelIndex) === "u")
+        eachWord = eachWord.slice(firstVowelIndex + 1) + eachWord.slice(0, firstVowelIndex +1 ) + "ay"
+      }
+      
+    //squeal
+    //012345
+      
+      // const ayFunction = (str1, str2) => {
+
+      //    const pigLatin = (arr1, arr2) => {       
+      //         if (arr2.includes(arr1[0])){
+      //           return arr1 + "way"
+      //         }
+      //         else
+      //           return arr1   
+      //       }
+      //       return pigLatin(arrayOfUserInput, vowelsArray)
+      //     }
+      //    console.log(ayFunction(arrayOfUserInput, vowelsArray))
+        
       // ACTION ITEM: your Pig Latin logic goes here!
 
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
+    
       return eachWord
     })
 
@@ -86,7 +118,7 @@ const App = () => {
         </div>
         <p>{inputTranslated}</p>
       </div>
-      <footer>&copy; 2023 | Coded by: Your Names Here!</footer>
+      <footer>&copy; 2023 | Coded by: Thomas & Brandon</footer>
     </div>
   )
 }
