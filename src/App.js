@@ -30,22 +30,49 @@ const App = () => {
         )
       })
       console.log("vowelsArray:", vowelsArray)
-
-        let firstVowelIndex = -1
+      //Sets variable firstVowelIndex to -1 so there's a possibility of no vowel
+      let firstVowelIndex = -1
+      //For loop that checks the length of the input and compares to vowel given
       for (let i = 0; i < eachWord.length; i++) {
         if (vowelsArray.includes(eachWord[i])) {
           firstVowelIndex = i
+          //break out of loop
           break
         }
       }
+      //if vowel is at the 0 index
+      //put way at end
       if (firstVowelIndex === 0) {
         eachWord = eachWord + "way"
       }
-      else if (firstVowelIndex !== 0) {
+      //if vowel is not at 0 index
+      else if (firstVowelIndex !== 0) 
+      {
+        //if the vowel index has a u, and the q is before it, place it at the end with "ay"
         if (eachWord.charAt(firstVowelIndex -1) === "q" && eachWord.charAt(firstVowelIndex) === "u")
         eachWord = eachWord.slice(firstVowelIndex + 1) + eachWord.slice(0, firstVowelIndex +1 ) + "ay"
+        //if 
+        else
+        {
+        eachWord =  eachWord.slice(firstVowelIndex) + eachWord.slice(0, firstVowelIndex) + "ay"
+        }
       }
+
+      if (firstVowelIndex === -1)
+      {
+       eachWord = eachWord.slice(eachWord.indexOf("y")) + eachWord.slice(0, eachWord.indexOf("y") ) + "ay"
+      }
+
       
+
+    //
+    //fluent
+    //uentflay
+    //through
+    //oughthray
+    //fry
+    //01234
+    //yfray
     //squeal
     //012345
       
